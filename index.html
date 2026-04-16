@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eclat Prestige | Luxury Hair Salon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C5A059;
+            --dark: #1A1A1A;
+            --light: #F9F7F2;
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        .font-serif-lux {
+            font-family: 'Playfair Display', serif;
+        }
+        .font-bodoni {
+            font-family: 'Bodoni Moda', serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            height: 100vh;
+        }
+        .section-padding {
+            padding: 100px 20px;
+        }
+        .btn-gold {
+            background-color: var(--gold);
+            color: white;
+            transition: all 0.3s ease;
+            letter-spacing: 0.1em;
+        }
+        .btn-gold:hover {
+            background-color: #b38f4d;
+            transform: translateY(-2px);
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .menu-item {
+            border-bottom: 1px solid #E5E5E5;
+            padding: 24px 0;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 flex justify-between items-center px-8 py-6 transition-all duration-300 bg-transparent" id="navbar">
+        <div class="text-2xl font-bodoni tracking-widest uppercase">Eclat Prestige</div>
+        <div class="hidden md:flex space-x-12 text-sm tracking-widest uppercase">
+            <a href="#concept" class="nav-link">Concept</a>
+            <a href="#menu" class="nav-link">Menu</a>
+            <a href="#stylist" class="nav-link">Stylist</a>
+            <a href="#reserve" class="nav-link">Reserve</a>
+        </div>
+        <div class="md:hidden">
+            <button id="menuBtn" class="focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient flex items-center justify-center text-center text-white relative">
+        <div class="px-4">
+            <p class="uppercase tracking-[0.5em] mb-4 text-sm md:text-base">Experience True Elegance</p>
+            <h1 class="font-serif-lux text-5xl md:text-8xl mb-8 leading-tight italic">美しさは、<br>静寂の中に宿る。</h1>
+            <a href="#reserve" class="btn-gold px-10 py-4 text-xs uppercase inline-block">Online Reservation</a>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7-7-7"></path></svg>
+        </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section id="concept" class="section-padding max-w-6xl mx-auto px-6 text-center">
+        <div class="fade-in">
+            <h2 class="font-serif-lux text-3xl md:text-5xl mb-12 italic text-gray-800">Concept</h2>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative h-[500px]">
+                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=800" alt="[高級な美容室の内装]" class="w-full h-full object-cover rounded-sm shadow-2xl">
+                </div>
+                <div class="text-left space-y-6">
+                    <p class="text-xl leading-loose font-light">
+                        「Eclat Prestige」は、単なる美容室ではありません。それは、都会の喧騒を離れ、心から解放されるためのプライベート・サンクチュアリです。
+                    </p>
+                    <p class="leading-relaxed text-gray-600">
+                        私たちは、一人ひとりのお客様に合わせた完全オーダーメイドの施術を提供するため、一日の予約数を限定しております。厳選された最高級の薬剤と、世界水準の技術、そして洗練されたホスピタリティで、あなたの本質的な美しさを引き出します。
+                    </p>
+                    <p class="font-serif-lux italic text-lg text-[#C5A059]">Time is the ultimate luxury.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="bg-white section-padding">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="font-serif-lux text-3xl md:text-5xl mb-4 italic">Service Menu</h2>
+                <div class="w-12 h-px bg-[#C5A059] mx-auto mb-4"></div>
+                <p class="text-xs uppercase tracking-widest text-gray-500">Premium Quality Services</p>
+            </div>
+
+            <div class="space-y-2 fade-in">
+                <div class="menu-item flex justify-between items-end">
+                    <div>
+                        <h3 class="text-lg font-medium">Design Cut</h3>
+                        <p class="text-xs text-gray-500 mt-1">シャンプー・ブロー込 / 骨格診断に基づいたカット</p>
+                    </div>
+                    <span class="font-bodoni text-lg">¥15,000</span>
+                </div>
+                <div class="menu-item flex justify-between items-end">
+                    <div>
+                        <h3 class="text-lg font-medium">Silk Texture Color</h3>
+                        <p class="text-xs text-gray-500 mt-1">ダメージレスな最高級薬剤を使用したフルカラー</p>
+                    </div>
+                    <span class="font-bodoni text-lg">¥25,000〜</span>
+                </div>
+                <div class="menu-item flex justify-between items-end">
+                    <div>
+                        <h3 class="text-lg font-medium">Royal Head Spa (90min)</h3>
+                        <p class="text-xs text-gray-500 mt-1">個室での深層リラクゼーション・育毛ケア</p>
+                    </div>
+                    <span class="font-bodoni text-lg">¥30,000</span>
+                </div>
+                <div class="menu-item flex justify-between items-end">
+                    <div>
+                        <h3 class="text-lg font-medium">Platinum Hair Repair</h3>
+                        <p class="text-xs text-gray-500 mt-1">髪質改善を目的とした集中トリートメント</p>
+                    </div>
+                    <span class="font-bodoni text-lg">¥20,000〜</span>
+                </div>
+            </div>
+            
+            <p class="text-center text-xs text-gray-400 mt-12 italic">※全ての価格には消費税が含まれておりません。</p>
+        </div>
+    </section>
+
+    <!-- Stylist Section -->
+    <section id="stylist" class="section-padding max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="font-serif-lux text-3xl md:text-5xl mb-4 italic">Stylist</h2>
+            <div class="w-12 h-px bg-[#C5A059] mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 fade-in">
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden mb-6">
+                    <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=600" alt="[トップスタイリスト]" class="w-full grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110">
+                </div>
+                <h3 class="font-serif-lux text-xl mb-1">Kenji Sato</h3>
+                <p class="text-xs text-[#C5A059] tracking-widest uppercase mb-4">Creative Director</p>
+                <p class="text-sm text-gray-600 leading-relaxed">ロンドン、パリでの研修を経て、数多くの著名人を担当。繊細なカットラインに定評があります。</p>
+            </div>
+
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden mb-6">
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&q=80&w=600" alt="[シニアスタイリスト]" class="w-full grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110">
+                </div>
+                <h3 class="font-serif-lux text-xl mb-1">Elena Tanaka</h3>
+                <p class="text-xs text-[#C5A059] tracking-widest uppercase mb-4">Senior Stylist / Colorist</p>
+                <p class="text-sm text-gray-600 leading-relaxed">パーソナルカラー診断に基づいた「肌を美しく見せるカラー」を提案。色彩の魔術師と呼ばれています。</p>
+            </div>
+
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden mb-6">
+                    <img src="https://images.unsplash.com/photo-1542909192-2f2247a990AD?auto=format&fit=crop&q=80&w=600" alt="[スパニスト]" class="w-full grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110">
+                </div>
+                <h3 class="font-serif-lux text-xl mb-1">Yuki Mori</h3>
+                <p class="text-xs text-[#C5A059] tracking-widest uppercase mb-4">Executive Spanist</p>
+                <p class="text-sm text-gray-600 leading-relaxed">東洋医学をベースとした独自のヘッドスパ技術を確立。深い眠りへと誘うハンドテクニックは圧巻。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reserve" class="bg-gray-100 section-padding">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="font-serif-lux text-3xl md:text-5xl mb-8 italic fade-in">Reservation</h2>
+            <div class="bg-white p-8 md:p-16 shadow-xl fade-in">
+                <p class="mb-8 text-gray-600">ご予約はオンライン、またはお電話にて承っております。<br>完全予約制のため、お早めのご連絡をお願い申し上げます。</p>
+                
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <button class="btn-gold px-12 py-5 text-sm uppercase">Book Online</button>
+                    <a href="tel:0300000000" class="border border-gray-300 px-12 py-5 text-sm uppercase hover:bg-gray-50 transition-colors">Call: 03-0000-0000</a>
+                </div>
+
+                <div class="mt-16 grid md:grid-cols-2 gap-8 text-left text-sm">
+                    <div>
+                        <h4 class="font-bold mb-4 uppercase tracking-widest text-[#C5A059]">Hours</h4>
+                        <p>Tuesday - Friday: 11:00 - 20:00</p>
+                        <p>Saturday, Sunday: 10:00 - 19:00</p>
+                        <p>Monday: Closed</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4 uppercase tracking-widest text-[#C5A059]">Address</h4>
+                        <p>〒107-0062 東京都港区南青山 5-x-x</p>
+                        <p>表参道駅 A5出口より徒歩3分</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:row justify-between items-center gap-8">
+            <div class="text-2xl font-bodoni tracking-widest">ECLAT PRESTIGE</div>
+            <div class="flex space-x-6 text-xs uppercase tracking-widest text-gray-400">
+                <a href="#" class="hover:text-white">Instagram</a>
+                <a href="#" class="hover:text-white">Facebook</a>
+                <a href="#" class="hover:text-white">Contact</a>
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+            </div>
+            <p class="text-[10px] text-gray-600">© 2024 Eclat Prestige. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white', 'shadow-sm', 'py-4');
+                nav.classList.remove('bg-transparent', 'py-6', 'text-white');
+                nav.style.color = '#1A1A1A';
+            } else {
+                nav.classList.remove('bg-white', 'shadow-sm', 'py-4');
+                nav.classList.add('bg-transparent', 'py-6');
+                nav.style.color = 'white';
+            }
+        });
+
+        // Initial color for transparent nav (Hero is dark, so text should be white)
+        document.getElementById('navbar').style.color = 'white';
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
